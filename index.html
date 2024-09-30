@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assure</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            z-index: 100;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Hamburger Menu Icon */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+        }
+
+        /* Navigation Links */
+        .nav-links ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .nav-links ul li {
+            margin: 0 20px;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links ul li a:hover {
+            background-color: #9fdaf4;
+            color: white;
+        }
+
+        .nav-links ul li a.active {
+            background-color: #9fdaf4;
+            color: white;
+        }
+
+        /* Hide the nav-links by default on mobile */
+        .nav-links {
+            display: flex;
+        }
+
+        /* Flexbox Container for Main Content */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            flex-grow: 1;
+        }
+
+        /* Rotating Logo Styling */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.5;
+            margin-top: 10px; /* Space between nav-links and logo */
+        }
+
+        .logo-rotate {
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+            animation: rotate 10s linear infinite;
+        }
+
+        /* Keyframes for rotating the logo */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            padding: 1px;
+            background-color: #fff;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-rotate {
+                width: 200px;
+            }
+
+            /* Show the hamburger icon on mobile */
+            .menu-icon {
+                display: block;
+            }
+
+            /* Hide the navigation links initially */
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+            }
+
+            .nav-links ul li {
+                margin: 10px 0;
+            }
+
+            /* When the menu is open, display the nav-links */
+            .nav-links.open {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-rotate {
+                width: 150px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">AI Assure</div>
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="http://customer.ananthjj.com">Customer</a></li>
+                <li><a href="http://carrier.ananthjj.com">Carrier</a></li>
+                <li><a href="http://admin.ananthjj.com">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content Container for Flexbox Centering -->
+    <div class="content-container">
+        <!-- Rotating logo in the center -->
+        <div class="logo-container">
+            <img src="https://storage.googleapis.com/my-first-static-webpage-landing/MagileLogo.png" alt="Magilesoft Logo" class="logo-rotate">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>by Magile Software Inc.</p>
+    </div>
+
+    <!-- JavaScript to Toggle the Menu -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
