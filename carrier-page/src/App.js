@@ -6,7 +6,7 @@ function App() {
   useEffect(() => {
     const runPythonScript = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/run-python', {
+        const response = await fetch('https://carrier-backend-378302764544.us-east4.run.app', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

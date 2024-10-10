@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: 'https://carrier.ananthjj.com' }));
 
 // Use environment variables for Flask API host and port
 const flaskApiHost = process.env.FLASK_API_HOST;
